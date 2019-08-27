@@ -46,7 +46,39 @@ export default class CarController {
     }
 
 
-
+    carForm() {
+        document.querySelector('#forms').innerHTML =
+            `
+    <form class="d-flex" onsubmit='app.controllers.carCtrl.addCar(event)'>
+        <div class="form-group">
+            <label for="make">Make</label>
+            <input type="text" class="form-control" id="make" placeholder="Make" name="make"> <button
+                class="btn btn-success" type="submit">Create</button>
+                    </div>
+            <div class="form-group">
+                <label for="model">Model</label>
+                <input type="text" class="form-control" id="model" placeholder="Model" name="model">
+                    </div>
+                <div class="form-group">
+                    <label for="img">Image Url</label>
+                    <input type="text" class="form-control" id="img" placeholder="Image Url..." name="imgUrl">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" class="form-control" id="year" placeholder="Year" name="year">
+                    </div>
+                        <div class="form-group">
+                            <label for="price">Price</label>
+                            <input type="number" class="form-control" id="price" placeholder="Price" name="price">
+                    </div>
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <input type="text" class="form-control" id="description" placeholder="Description"
+                                    name="description"></textarea>
+                            </div>
+                </form>
+                    `
+    }
 
 
 
