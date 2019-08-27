@@ -5,6 +5,7 @@ let _carApi = axios.create({
 })
 
 
+
 //Private
 let _state = {
     cars: []
@@ -56,4 +57,32 @@ export default class CarService {
                 console.error(err)
             })
     }
+
+    //cars/:id
+    deleteCar(id) {
+        //NOTE delete only requires the id, there is no "body"
+        _carApi.delete(id)
+            .then(res => {
+                // this.getApiCars();
+                //get the index of the object with a given id
+                let index = _state.cars.findIndex(car => car._id == id)
+                _state.cars.splice(index, 1)
+                _setState('cars', _state.cars)
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+
+    bid(id) {
+        //find the object, increase its price by $1
+        let car = _state.cars.find(c => c._id == id)
+        car.price++
+        //NOTE put will require the id, and the body with the update
+        _carApi.put(id, { price: car.price })
+            .then(res => {
+                _setState('cars', _state.cars)
+            })
+    }
+
 }

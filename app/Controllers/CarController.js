@@ -36,6 +36,15 @@ export default class CarController {
 
     }
 
+    delete(id) {
+        if (window.confirm('Are you sure?')) {
+            _cs.deleteCar(id)
+        }
+    }
+    bid(id) {
+        _cs.bid(id)
+    }
+
 
 
 
