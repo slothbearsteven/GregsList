@@ -19,4 +19,32 @@ export default class CarController {
         //NOTE Retrieve data
         _cs.getApiCars();
     }
+
+    addCar(e) {
+        e.preventDefault();
+        let form = e.target
+        let data = {
+            make: form.make.value,
+            model: form.model.value,
+            imgUrl: form.imgUrl.value,
+            year: form.year.value,
+            price: form.price.value,
+            description: form.description.value
+        }
+        _cs.addCar(data)
+        form.reset()
+
+    }
+
+
+
+
+
+
+
+
+
+
+
+
 }

@@ -34,13 +34,23 @@ export default class CarService {
     }
 
 
-
-
     getApiCars() {
         _carApi.get()
             .then(res => {
                 let carsData = res.data.data.map(c => new Car(c))
                 _setState('cars', carsData)
+            })
+            .catch(err => {
+                console.error(err)
+            })
+    }
+    addCar(data) {
+        //NOTE A post request takes in the URLExtension and the data object to create from.
+        _carApi.post('', data)
+            .then(res => {
+                // this.getApiCars()
+                _state.cars.push(res.data.data)
+                _setState('cars', _state.cars)
             })
             .catch(err => {
                 console.error(err)
