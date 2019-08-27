@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/style.css">
+    <title>GregsList</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <header class="row">
+            <div class="col-12">
+                <h1>Gregs-List*</h1>
+                <p>
+                    <sm>*No relation to Craig</sm>
+                </p>
+            </div>
+        </header>
+        <main class="row">
+            <div class="col-12">
+                <form onsubmit='app.controllers.carCtrl.addCar'>
+                    <div class="form-group">
+                        <label for="make">Make</label>
+                        <input type="text" class="form-control" id="make" placeholder="Make" name="make">
+                    </div>
+                    <div class="form-group">
+                        <label for="model">Model</label>
+                        <input type="text" class="form-control" id="model" placeholder="Model" name="model">
+                    </div>
+                    <div class="form-group">
+                        <label for="img">Image Url</label>
+                        <input type="text" class="form-control" id="img" placeholder="Image Url..." name="imgUrl">
+                    </div>
+                    <div class="form-group">
+                        <label for="year">Year</label>
+                        <input type="number" class="form-control" id="year" placeholder="Year" name="year">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price</label>
+                        <input type="number" class="form-control" id="price" placeholder="Price" name="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description</label>
+                        <textarea class="form-control" id="description" placeholder="Description"
+                            name="description"></textarea>
+                    </div>
+                </form>
+            </div>
+            <div class="col-12">
+                <h3>Available Cars</h3>
+                <hr>
+                <div class="row" id="cars-cards">
+
+                </div>
+            </div>
+        </main>
+    </div>
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"
+        integrity="sha256-XmdRbTre/3RulhYk/cOBUMpYlaAp2Rpo/s556u0OIKk=" crossorigin="anonymous"></script>
+    <script src="app/main.js" type="module"></script>
+</body>
+
+</html>
